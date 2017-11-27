@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Vision
 //
-//  Created by School on 27/11/2017.
+//  Created by ClementM on 27/11/2017.
 //  Copyright © 2017 ClementM. All rights reserved.
 //
 
