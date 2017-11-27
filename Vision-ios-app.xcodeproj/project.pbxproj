@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		BFA44DAA1FCCBE2A009CC7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DA91FCCBE2A009CC7E7 /* AppDelegate.swift */; };
-		BFA44DAC1FCCBE2A009CC7E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DAB1FCCBE2A009CC7E7 /* ViewController.swift */; };
+		BFA44DAC1FCCBE2A009CC7E7 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DAB1FCCBE2A009CC7E7 /* CameraVC.swift */; };
 		BFA44DAF1FCCBE2A009CC7E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA44DAD1FCCBE2A009CC7E7 /* Main.storyboard */; };
 		BFA44DB11FCCBE2A009CC7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA44DB01FCCBE2A009CC7E7 /* Assets.xcassets */; };
 		BFA44DB41FCCBE2A009CC7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA44DB21FCCBE2A009CC7E7 /* LaunchScreen.storyboard */; };
+		BFA44DBF1FCCBF42009CC7E7 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DBE1FCCBF42009CC7E7 /* RoundedShadowView.swift */; };
+		BFA44DC11FCCBF5D009CC7E7 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DC01FCCBF5D009CC7E7 /* RoundedShadowButton.swift */; };
+		BFA44DC31FCCBF6E009CC7E7 /* RoundedShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA44DC21FCCBF6E009CC7E7 /* RoundedShadowImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFA44DA61FCCBE2A009CC7E7 /* Vision-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA44DA91FCCBE2A009CC7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFA44DAB1FCCBE2A009CC7E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFA44DAB1FCCBE2A009CC7E7 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		BFA44DAE1FCCBE2A009CC7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFA44DB01FCCBE2A009CC7E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFA44DB31FCCBE2A009CC7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFA44DB51FCCBE2A009CC7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFA44DBE1FCCBF42009CC7E7 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		BFA44DC01FCCBF5D009CC7E7 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		BFA44DC21FCCBF6E009CC7E7 /* RoundedShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		BFA44DA81FCCBE2A009CC7E7 /* Vision-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				BFA44DBD1FCCBE8F009CC7E7 /* Controller */,
+				BFA44DBC1FCCBE8E009CC7E7 /* Resources */,
+				BFA44DBB1FCCBE8B009CC7E7 /* View */,
 				BFA44DA91FCCBE2A009CC7E7 /* AppDelegate.swift */,
-				BFA44DAB1FCCBE2A009CC7E7 /* ViewController.swift */,
 				BFA44DAD1FCCBE2A009CC7E7 /* Main.storyboard */,
 				BFA44DB01FCCBE2A009CC7E7 /* Assets.xcassets */,
 				BFA44DB21FCCBE2A009CC7E7 /* LaunchScreen.storyboard */,
 				BFA44DB51FCCBE2A009CC7E7 /* Info.plist */,
 			);
 			path = "Vision-ios-app";
+			sourceTree = "<group>";
+		};
+		BFA44DBB1FCCBE8B009CC7E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFA44DBE1FCCBF42009CC7E7 /* RoundedShadowView.swift */,
+				BFA44DC01FCCBF5D009CC7E7 /* RoundedShadowButton.swift */,
+				BFA44DC21FCCBF6E009CC7E7 /* RoundedShadowImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFA44DBC1FCCBE8E009CC7E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFA44DBD1FCCBE8F009CC7E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFA44DAB1FCCBE2A009CC7E7 /* CameraVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFA44DAC1FCCBE2A009CC7E7 /* ViewController.swift in Sources */,
+				BFA44DAC1FCCBE2A009CC7E7 /* CameraVC.swift in Sources */,
 				BFA44DAA1FCCBE2A009CC7E7 /* AppDelegate.swift in Sources */,
+				BFA44DBF1FCCBF42009CC7E7 /* RoundedShadowView.swift in Sources */,
+				BFA44DC11FCCBF5D009CC7E7 /* RoundedShadowButton.swift in Sources */,
+				BFA44DC31FCCBF6E009CC7E7 /* RoundedShadowImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = "Vision-ios-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clementm.Vision-ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = "Vision-ios-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clementm.Vision-ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
