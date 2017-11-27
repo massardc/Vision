@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0D15A41FCC9BD400FB055B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D15A31FCC9BD400FB055B /* AppDelegate.swift */; };
-		BF0D15A61FCC9BD400FB055B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D15A51FCC9BD400FB055B /* ViewController.swift */; };
+		BF0D15A61FCC9BD400FB055B /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D15A51FCC9BD400FB055B /* CameraVC.swift */; };
 		BF0D15A91FCC9BD400FB055B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0D15A71FCC9BD400FB055B /* Main.storyboard */; };
 		BF0D15AB1FCC9BD400FB055B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0D15AA1FCC9BD400FB055B /* Assets.xcassets */; };
 		BF0D15AE1FCC9BD400FB055B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0D15AC1FCC9BD400FB055B /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		BF0D15A01FCC9BD400FB055B /* Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0D15A31FCC9BD400FB055B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF0D15A51FCC9BD400FB055B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF0D15A51FCC9BD400FB055B /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		BF0D15A81FCC9BD400FB055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF0D15AA1FCC9BD400FB055B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0D15AD1FCC9BD400FB055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,38 @@
 		BF0D15A21FCC9BD400FB055B /* Vision */ = {
 			isa = PBXGroup;
 			children = (
+				BF0D15B51FCC9C0300FB055B /* Controller */,
+				BF0D15B71FCC9C1900FB055B /* Resources */,
+				BF0D15B61FCC9C0800FB055B /* View */,
 				BF0D15A31FCC9BD400FB055B /* AppDelegate.swift */,
-				BF0D15A51FCC9BD400FB055B /* ViewController.swift */,
 				BF0D15A71FCC9BD400FB055B /* Main.storyboard */,
 				BF0D15AA1FCC9BD400FB055B /* Assets.xcassets */,
 				BF0D15AC1FCC9BD400FB055B /* LaunchScreen.storyboard */,
 				BF0D15AF1FCC9BD400FB055B /* Info.plist */,
 			);
 			path = Vision;
+			sourceTree = "<group>";
+		};
+		BF0D15B51FCC9C0300FB055B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D15A51FCC9BD400FB055B /* CameraVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF0D15B61FCC9C0800FB055B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF0D15B71FCC9C1900FB055B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0D15A61FCC9BD400FB055B /* ViewController.swift in Sources */,
+				BF0D15A61FCC9BD400FB055B /* CameraVC.swift in Sources */,
 				BF0D15A41FCC9BD400FB055B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = Vision/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clementm.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = Vision/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clementm.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
