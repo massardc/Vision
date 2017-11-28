@@ -26,6 +26,8 @@ class CameraVC: UIViewController {
     var photoData: Data?
     var flashControlState: FlashState = .off
     
+    var speechSynthesizer = AVSpeechSynthesizer()
+    
     // Outlets
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var identificationLbl: UILabel!
@@ -33,6 +35,7 @@ class CameraVC: UIViewController {
     @IBOutlet weak var confidenceLbl: UILabel!
     @IBOutlet weak var captureImageView: RoundedShadowImageView!
     @IBOutlet weak var flashBtn: RoundedShadowButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,8 @@ class CameraVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer.frame = cameraView.bounds
+        speechSynthesizer.delegate = self
+        spinner.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +84,12 @@ class CameraVC: UIViewController {
         }
     }
     
+    // Functions
     @objc func didTapCameraView() {
+        self.cameraView.isUserInteractionEnabled = false
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
         let settings = AVCapturePhotoSettings()
         
         // Old way
@@ -102,22 +112,31 @@ class CameraVC: UIViewController {
     func resultsMethod(request: VNRequest, error: Error?) {
         guard let results = request.results as? [VNClassificationObservation] else { return }
         
-        var bestConfidence: Float = 0
+        var highestConfidence: Float = 0
         var bestIdentifier = ""
         for classification in results {
-            if classification.confidence > bestConfidence {
-                bestConfidence = classification.confidence
+            if classification.confidence > highestConfidence {
+                highestConfidence = classification.confidence
                 bestIdentifier = classification.identifier
             }
         }
         
-        if bestConfidence < 0.5 {
-            self.identificationLbl.text = "I'm not sure what this is."
+        if highestConfidence < 0.5 {
+            let unknownObjectMessage = "I'm not sure what this is. Please try again."
+            self.identificationLbl.text = unknownObjectMessage
+            synthesizeSpeech(fromString: unknownObjectMessage)
             self.confidenceLbl.text = ""
         } else {
             self.identificationLbl.text = bestIdentifier
-            self.confidenceLbl.text = "Confidence: \(Int(bestConfidence * 100))%"
+            self.confidenceLbl.text = "Confidence: \(Int(highestConfidence * 100))%"
+            let completeSentence = "This looks like a \(bestIdentifier) and I'm \(Int(highestConfidence * 100))% sure."
+            synthesizeSpeech(fromString: completeSentence)
         }
+    }
+    
+    func synthesizeSpeech(fromString string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
     }
     
     // Action
@@ -156,3 +175,10 @@ extension CameraVC: AVCapturePhotoCaptureDelegate {
     }
 }
 
+extension CameraVC: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        self.cameraView.isUserInteractionEnabled = true
+        spinner.isHidden = true
+        spinner.stopAnimating()
+    }
+}

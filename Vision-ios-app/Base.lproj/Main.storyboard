@@ -25,7 +25,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCl-JM-6XU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-ZS-0pL" customClass="RoundedShadowView" customModule="Vision_ios_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="50" width="335" height="60"/>
@@ -79,6 +79,9 @@
                                     <constraint firstAttribute="height" constant="130" id="ngt-SV-pUd"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ynu-TE-gM1">
+                                <rect key="frame" x="307" y="572" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -87,7 +90,9 @@
                             <constraint firstItem="8Oa-Zn-j6i" firstAttribute="bottom" secondItem="gRK-q3-gxQ" secondAttribute="bottom" constant="20" id="9cg-q6-GG9"/>
                             <constraint firstItem="hCl-JM-6XU" firstAttribute="leading" secondItem="8Oa-Zn-j6i" secondAttribute="leading" id="9l7-e5-yN4"/>
                             <constraint firstItem="hCl-JM-6XU" firstAttribute="top" secondItem="AmB-sA-mRj" secondAttribute="top" id="CNM-q3-JAg"/>
+                            <constraint firstItem="ynu-TE-gM1" firstAttribute="centerY" secondItem="Mw8-xD-qOw" secondAttribute="centerY" id="DYu-8J-MgY"/>
                             <constraint firstItem="fd4-ZS-0pL" firstAttribute="top" secondItem="8Oa-Zn-j6i" secondAttribute="top" constant="30" id="grS-07-RFq"/>
+                            <constraint firstItem="ynu-TE-gM1" firstAttribute="centerX" secondItem="Mw8-xD-qOw" secondAttribute="centerX" id="h8i-DT-iS9"/>
                             <constraint firstItem="8Oa-Zn-j6i" firstAttribute="trailing" secondItem="hCl-JM-6XU" secondAttribute="trailing" id="mEY-q3-noh"/>
                             <constraint firstItem="8Oa-Zn-j6i" firstAttribute="trailing" secondItem="fd4-ZS-0pL" secondAttribute="trailing" constant="20" id="oYm-GO-4rl"/>
                             <constraint firstItem="fd4-ZS-0pL" firstAttribute="leading" secondItem="8Oa-Zn-j6i" secondAttribute="leading" constant="20" id="reJ-tw-MIc"/>
@@ -103,6 +108,7 @@
                         <outlet property="flashBtn" destination="gRK-q3-gxQ" id="Cnl-KQ-T44"/>
                         <outlet property="identificationLbl" destination="kNt-nW-Kz2" id="wxj-Qs-K1w"/>
                         <outlet property="roundedLblView" destination="fd4-ZS-0pL" id="eLf-B0-DMu"/>
+                        <outlet property="spinner" destination="ynu-TE-gM1" id="j49-W1-fw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ne-KY-CPe" sceneMemberID="firstResponder"/>
