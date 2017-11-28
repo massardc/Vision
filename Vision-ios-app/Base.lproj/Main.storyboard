@@ -68,6 +68,9 @@
                                 <state key="normal" title="FLASH OFF">
                                     <color key="titleColor" red="0.76424673759999995" green="0.2208026465" blue="0.26984208500000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="flashBtnPressed:" destination="yMj-NT-RT1" eventType="touchUpInside" id="w9Z-fu-rdv"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mw8-xD-qOw" customClass="RoundedShadowImageView" customModule="Vision_ios_app" customModuleProvider="target">
                                 <rect key="frame" x="280" y="517" width="75" height="130"/>
